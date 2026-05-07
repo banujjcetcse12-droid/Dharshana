@@ -1,0 +1,50 @@
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+class Guest {
+    private String id;
+    private String name;
+    private String email;
+
+    public Guest(String id, String name, String email) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+    }
+    }
+class Room {
+    private int roomNumber;
+    private String category; 
+    private double pricePerNight;
+    private boolean isAvailable;
+
+    public Room(int roomNumber, String category, double price) {
+        this.roomNumber = roomNumber;
+        this.category = category;
+        this.pricePerNight = price;
+        this.isAvailable = true;
+    }
+
+    public void setAvailable(boolean available) { isAvailable = available; }
+    public boolean isAvailable() { return isAvailable; }
+    public int getRoomNumber() { return roomNumber; }
+    public double getPricePerNight() { 
+     return pricePerNight;
+   }
+}
+
+class Booking {
+    private String bookingId;
+    private Guest guest;
+    private Room room;
+    private LocalDate checkInDate;
+    private int stayDuration;
+
+    public Booking(String id, Guest guest, Room room, LocalDate date, int duration) {
+        this.bookingId = id;
+        this.guest = guest;
+        this.room = room;
+        this.checkInDate = date;
+        this.stayDuration = duration;
+    }
+}
